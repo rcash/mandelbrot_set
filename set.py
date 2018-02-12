@@ -21,12 +21,12 @@ class Display:
 
     def draw(self):
         turtle.clear()
-        for x in range(-150, 151):
+        for x in range(-1 * int(self.__drawsize/2), int(self.__drawsize/2) + 1):
             #fixes the white lines when moving from each 'col' of pixels
             turtle.up()
             turtle.goto(x, -150)
             turtle.down()
-            for y in range(-150, 151):
+            for y in range(-1 * int(self.__drawsize/2), int(self.__drawsize/2) + 1):
                 a = ((x + self.xoffset)/self.__drawsize) * (self.__urbound.getreal() - self.__llbound.getreal())
                 b = ((y + self.yoffset)/self.__drawsize) * (self.__urbound.getimag() - self.__llbound.getimag())
                 loc = Complex(a,b)
